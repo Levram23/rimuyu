@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rimuyo Tours - Authentic Lake Titicaca experiences in Puno, Peru. Book Uros Islands, Taquile Island tours and private adventures.">
+  <title>Rimuyo Tours | Lake Titicaca Authentic Experiences | Puno, Peru</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            titicaca: {
+              deep: '#0A2647',
+              azure: '#1E5F8A',
+              gold: '#C9A227',
+              sand: '#F5E6D3',
+              mist: '#E8F1F5'
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .app-wrapper { height: 100%; overflow-x: hidden; overflow-y: auto; }
+    
+    .gradient-overlay {
+      background: linear-gradient(180deg, rgba(10,38,71,0.3) 0%, rgba(10,38,71,0.7) 100%);
+    }
+    
+    .hero-pattern {
+      background-image: 
+        radial-gradient(ellipse at 30% 20%, rgba(30,95,138,0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(201,162,39,0.15) 0%, transparent 40%),
+        linear-gradient(135deg, #0A2647 0%, #1E5F8A 50%, #0A2647 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(10,38,71,0.25);
+    }
+    
+    .wave-divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave-divider svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 80px;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .pulse-gold {
+      animation: pulseGold 2s infinite;
+    }
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201,162,39,0.4); }
+      50% { box-shadow: 0 0 0 15px rgba(201,162,39,0); }
+    }
+    
+    .loading-spinner {
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #C9A227;
+      box-shadow: 0 0 0 3px rgba(201,162,39,0.2);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #C9A227;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full bg-titicaca-mist font-body text-titicaca-deep">
+  <div class="app-wrapper" id="app"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-20"><a href="#home" class="flex items-center space-x-3">
+       <div class="w-12 h-12 rounded-full bg-titicaca-gold flex items-center justify-center">
+        <svg class="w-7 h-7 text-titicaca-deep" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        </svg>
+       </div>
+       <div><span class="text-xl font-display font-bold text-white" id="nav-logo">Rimuyo Tours</span> <span class="block text-xs text-titicaca-gold tracking-wider">LAKE TITICACA</span>
+       </div></a>
+      <div class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-link text-white/90 hover:text-white font-medium">Home</a> <a href="#experiences" class="nav-link text-white/90 hover:text-white font-medium">Experiences</a> <a href="#about" class="nav-link text-white/90 hover:text-white font-medium">About Us</a> <a href="#reviews" class="nav-link text-white/90 hover:text-white font-medium">Reviews</a> <a href="#contact" class="nav-link text-white/90 hover:text-white font-medium">Contact</a> <button onclick="openBookingModal()" class="bg-titicaca-gold text-titicaca-deep px-6 py-2.5 rounded-full font-semibold hover:bg-yellow-500 transition-all pulse-gold"> Book Now </button>
+      </div><button class="md:hidden text-white p-2" onclick="toggleMobileMenu()">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-titicaca-deep/95 backdrop-blur-lg">
+     <div class="px-4 py-6 space-y-4"><a href="#home" class="block text-white py-2 border-b border-white/10" onclick="toggleMobileMenu()">Home</a> <a href="#experiences" class="block text-white py-2 border-b border-white/10" onclick="toggleMobileMenu()">Experiences</a> <a href="#about" class="block text-white py-2 border-b border-white/10" onclick="toggleMobileMenu()">About Us</a> <a href="#reviews" class="block text-white py-2 border-b border-white/10" onclick="toggleMobileMenu()">Reviews</a> <a href="#contact" class="block text-white py-2 border-b border-white/10" onclick="toggleMobileMenu()">Contact</a> <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full bg-titicaca-gold text-titicaca-deep py-3 rounded-full font-semibold mt-4"> Book Now </button>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="relative min-h-screen hero-pattern flex items-center">
+    <div class="absolute inset-0 gradient-overlay"></div><!-- Animated Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-titicaca-gold/10 blur-3xl animate-pulse"></div>
+     <div class="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-titicaca-azure/20 blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+     <div class="max-w-3xl fade-in"><span class="inline-block bg-titicaca-gold/20 text-titicaca-gold px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-titicaca-gold/30"> 🌟 #1 Rated Tours in Puno, Peru </span>
+      <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">Discover the Magic of <span class="text-titicaca-gold">Lake Titicaca</span></h1>
+      <p id="hero-subtitle" class="text-xl sm:text-2xl text-white/80 mb-10 font-light leading-relaxed">Authentic experiences with local families on the world's highest navigable lake. Create memories that last forever.</p>
+      <div class="flex flex-col sm:flex-row gap-4"><button onclick="openBookingModal()" id="hero-cta" class="bg-titicaca-gold text-titicaca-deep px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-500 transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-xl"> <span>Book Your Adventure</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg></button> <a href="#experiences" class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z" />
+        </svg><span>Watch Video</span> </a>
+      </div><!-- Trust Indicators -->
+      <div class="mt-12 flex flex-wrap items-center gap-6 text-white/70 text-sm">
+       <div class="flex items-center gap-2">
+        <div class="flex -space-x-2">
+         <div class="w-8 h-8 rounded-full bg-titicaca-gold flex items-center justify-center text-xs font-bold text-titicaca-deep">
+          JM
+         </div>
+         <div class="w-8 h-8 rounded-full bg-titicaca-azure flex items-center justify-center text-xs font-bold text-white">
+          SK
+         </div>
+         <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-xs font-bold text-white">
+          AL
+         </div>
+        </div><span>500+ Happy Travelers</span>
+       </div>
+       <div class="flex items-center gap-1"><span class="text-yellow-400">★★★★★</span> <span>4.9/5 on TripAdvisor</span>
+       </div>
+       <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewbox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+        </svg><span>Secure Online Payment</span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="wave-divider">
+     <svg viewbox="0 0 1200 120" preserveaspectratio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.6,156.63,93.88,225,79.91,275.05,70.38,310.12,62.57,321.39,56.44Z" fill="#E8F1F5" />
+     </svg>
+    </div>
+   </section><!-- Experiences Section -->
+   <section id="experiences" class="py-20 bg-titicaca-mist">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="text-titicaca-gold font-semibold tracking-wider uppercase">Our Experiences</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-titicaca-deep mt-3 mb-4">Unforgettable Adventures Await</h2>
+      <p class="text-titicaca-azure text-lg max-w-2xl mx-auto">Choose from our carefully crafted experiences, each designed to connect you with the authentic culture and breathtaking beauty of Lake Titicaca.</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Experience Card 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg">
+       <div class="h-56 bg-gradient-to-br from-titicaca-azure to-titicaca-deep relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center">
+         <div class="text-center text-white">
+          <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+           <svg class="w-10 h-10" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L13.09 8.26L20 9.27L15 14.14L16.18 21.02L12 17.77L7.82 21.02L9 14.14L4 9.27L10.91 8.26L12 2Z" />
+           </svg>
+          </div><span class="text-sm uppercase tracking-wider">Most Popular</span>
+         </div>
+        </div>
+        <div class="absolute top-4 right-4 bg-titicaca-gold text-titicaca-deep px-3 py-1 rounded-full text-sm font-bold">
+         From $45
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-display font-bold text-titicaca-deep mb-2">Uros Floating Islands</h3>
+        <p class="text-titicaca-azure mb-4">Explore the ancient floating reed islands and meet the Uros people who have lived here for centuries.</p>
+        <div class="flex items-center gap-4 text-sm text-titicaca-azure mb-4"><span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+          </svg> 3-4 hours </span> <span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg> 2-15 guests </span>
+        </div><button onclick="selectExperience('Uros Floating Islands', 45)" class="w-full bg-titicaca-deep text-white py-3 rounded-xl font-semibold hover:bg-titicaca-azure transition-all"> Reserve Now </button>
+       </div>
+      </div><!-- Experience Card 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg">
+       <div class="h-56 bg-gradient-to-br from-titicaca-gold to-amber-600 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center">
+         <div class="text-center text-white">
+          <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+           <svg class="w-10 h-10" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 14.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+           </svg>
+          </div><span class="text-sm uppercase tracking-wider">Cultural Immersion</span>
+         </div>
+        </div>
+        <div class="absolute top-4 right-4 bg-white text-titicaca-deep px-3 py-1 rounded-full text-sm font-bold">
+         From $85
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-display font-bold text-titicaca-deep mb-2">Taquile Island Full Day</h3>
+        <p class="text-titicaca-azure mb-4">Experience the UNESCO-recognized textile traditions and share a traditional meal with local families.</p>
+        <div class="flex items-center gap-4 text-sm text-titicaca-azure mb-4"><span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+          </svg> Full Day </span> <span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg> 2-12 guests </span>
+        </div><button onclick="selectExperience('Taquile Island Full Day', 85)" class="w-full bg-titicaca-deep text-white py-3 rounded-xl font-semibold hover:bg-titicaca-azure transition-all"> Reserve Now </button>
+       </div>
+      </div><!-- Experience Card 3 -->
+      <div class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg">
+       <div class="h-56 bg-gradient-to-br from-purple-700 to-titicaca-deep relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center">
+         <div class="text-center text-white">
+          <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+           <svg class="w-10 h-10" fill="currentColor" viewbox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+           </svg>
+          </div><span class="text-sm uppercase tracking-wider">Premium Experience</span>
+         </div>
+        </div>
+        <div class="absolute top-4 right-4 bg-titicaca-gold text-titicaca-deep px-3 py-1 rounded-full text-sm font-bold">
+         From $150
+        </div>
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-display font-bold text-titicaca-deep mb-2">2-Day Homestay Adventure</h3>
+        <p class="text-titicaca-azure mb-4">Sleep under the stars on Amantaní Island and wake up to stunning sunrise views over the lake.</p>
+        <div class="flex items-center gap-4 text-sm text-titicaca-azure mb-4"><span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+          </svg> 2 Days </span> <span class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+           <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg> 2-8 guests </span>
+        </div><button onclick="selectExperience('2-Day Homestay Adventure', 150)" class="w-full bg-titicaca-deep text-white py-3 rounded-xl font-semibold hover:bg-titicaca-azure transition-all"> Reserve Now </button>
+       </div>
+      </div>
+     </div><!-- Private Tours CTA -->
+     <div class="mt-16 bg-gradient-to-r from-titicaca-deep to-titicaca-azure rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+       <svg class="w-full h-full" viewbox="0 0 100 100" preserveaspectratio="none"><pattern id="pattern" x="0" y="0" width="20" height="20" patternunits="userSpaceOnUse">
+         <circle cx="10" cy="10" r="2" fill="currentColor" />
+        </pattern> <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
+       </svg>
+      </div>
+      <div class="relative z-10"><span class="inline-block bg-titicaca-gold/20 text-titicaca-gold px-4 py-1 rounded-full text-sm font-semibold mb-4">✨ Exclusive Offer</span>
+       <h3 class="text-2xl md:text-4xl font-display font-bold mb-4">Looking for a Private Experience?</h3>
+       <p class="text-white/80 mb-8 max-w-2xl mx-auto text-lg">Create your own custom adventure with our expert local guides. Perfect for families, couples, or groups seeking an intimate experience.</p><button onclick="openBookingModal('Private Tour')" class="bg-titicaca-gold text-titicaca-deep px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-500 transition-all inline-flex items-center gap-2"> <span>Request Custom Tour</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg></button>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div><span class="text-titicaca-gold font-semibold tracking-wider uppercase">About Rimuyo Tours</span>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-titicaca-deep mt-3 mb-6">Your Local Guides to Lake Titicaca</h2>
+       <p class="text-titicaca-azure text-lg mb-6 leading-relaxed">Founded by local families who have called Lake Titicaca home for generations, Rimuyo Tours offers authentic experiences that go beyond typical tourism.</p>
+       <p class="text-titicaca-azure mb-8 leading-relaxed">Our name "Rimuyo" comes from Quechua, meaning "to speak together" – reflecting our commitment to cultural exchange and meaningful connections between travelers and our communities.</p>
+       <div class="grid sm:grid-cols-2 gap-6 mb-8">
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl bg-titicaca-gold/10 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-titicaca-gold" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-semibold text-titicaca-deep mb-1">100% Local Owned</h4>
+          <p class="text-sm text-titicaca-azure">Supporting Puno communities directly</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl bg-titicaca-gold/10 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-titicaca-gold" fill="currentColor" viewbox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-semibold text-titicaca-deep mb-1">Expert Guides</h4>
+          <p class="text-sm text-titicaca-azure">Bilingual &amp; certified professionals</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl bg-titicaca-gold/10 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-titicaca-gold" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-semibold text-titicaca-deep mb-1">Sustainable Tourism</h4>
+          <p class="text-sm text-titicaca-azure">Protecting our heritage</p>
+         </div>
+        </div>
+        <div class="flex items-start gap-4">
+         <div class="w-12 h-12 rounded-xl bg-titicaca-gold/10 flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-titicaca-gold" fill="currentColor" viewbox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+          </svg>
+         </div>
+         <div>
+          <h4 class="font-semibold text-titicaca-deep mb-1">Secure Payments</h4>
+          <p class="text-sm text-titicaca-azure">Book with confidence</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="relative">
+       <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-4">
+         <div class="h-48 bg-gradient-to-br from-titicaca-azure to-titicaca-deep rounded-2xl flex items-center justify-center text-white shadow-xl"><span class="text-6xl">🏔️</span>
+         </div>
+         <div class="h-32 bg-gradient-to-br from-titicaca-gold to-amber-500 rounded-2xl flex items-center justify-center shadow-xl"><span class="text-5xl">🛶</span>
+         </div>
+        </div>
+        <div class="space-y-4 pt-8">
+         <div class="h-32 bg-titicaca-sand rounded-2xl flex items-center justify-center shadow-xl"><span class="text-5xl">👨‍👩‍👧‍👦</span>
+         </div>
+         <div class="h-48 bg-gradient-to-br from-purple-600 to-titicaca-deep rounded-2xl flex items-center justify-center text-white shadow-xl"><span class="text-6xl">🌅</span>
+         </div>
+        </div>
+       </div><!-- Stats Card -->
+       <div class="absolute -bottom-8 -left-4 bg-white rounded-2xl shadow-2xl p-6 border border-titicaca-mist">
+        <div class="flex items-center gap-6">
+         <div class="text-center"><span class="block text-3xl font-display font-bold text-titicaca-gold">500+</span> <span class="text-sm text-titicaca-azure">Happy Guests</span>
+         </div>
+         <div class="w-px h-12 bg-titicaca-mist"></div>
+         <div class="text-center"><span class="block text-3xl font-display font-bold text-titicaca-gold">8+</span> <span class="text-sm text-titicaca-azure">Years Experience</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Reviews Section -->
+   <section id="reviews" class="py-20 bg-titicaca-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="text-titicaca-gold font-semibold tracking-wider uppercase">Testimonials</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-titicaca-deep mt-3 mb-4">What Our Travelers Say</h2>
+      <div class="flex items-center justify-center gap-2 mt-4"><span class="text-yellow-500 text-2xl">★★★★★</span> <span class="text-titicaca-azure font-semibold">4.9/5 from 250+ reviews</span>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Review 1 -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+       <div class="flex items-center gap-1 mb-4 text-yellow-500">
+        ★★★★★
+       </div>
+       <p class="text-titicaca-azure mb-6 italic leading-relaxed">"An absolutely magical experience! Our guide Carlos made us feel like family. The homestay on Amantaní was the highlight of our Peru trip."</p>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-titicaca-azure flex items-center justify-center text-white font-bold">
+         SM
+        </div>
+        <div>
+         <h4 class="font-semibold text-titicaca-deep">Sarah M.</h4>
+         <p class="text-sm text-titicaca-azure">United States 🇺🇸</p>
+        </div>
+       </div>
+       <div class="mt-4 pt-4 border-t border-titicaca-mist"><span class="text-xs text-titicaca-azure/60 flex items-center gap-1">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+         </svg> Verified TripAdvisor Review </span>
+       </div>
+      </div><!-- Review 2 -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+       <div class="flex items-center gap-1 mb-4 text-yellow-500">
+        ★★★★★
+       </div>
+       <p class="text-titicaca-azure mb-6 italic leading-relaxed">"We've traveled extensively and this tour exceeded all expectations. The authenticity, the food, the views - everything was perfect!"</p>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-titicaca-gold flex items-center justify-center text-titicaca-deep font-bold">
+         PL
+        </div>
+        <div>
+         <h4 class="font-semibold text-titicaca-deep">Pierre L.</h4>
+         <p class="text-sm text-titicaca-azure">France 🇫🇷</p>
+        </div>
+       </div>
+       <div class="mt-4 pt-4 border-t border-titicaca-mist"><span class="text-xs text-titicaca-azure/60 flex items-center gap-1">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+         </svg> Verified Google Review </span>
+       </div>
+      </div><!-- Review 3 -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+       <div class="flex items-center gap-1 mb-4 text-yellow-500">
+        ★★★★★
+       </div>
+       <p class="text-titicaca-azure mb-6 italic leading-relaxed">"Booking online was so easy! Instant confirmation and WhatsApp updates. The team is incredibly professional and friendly."</p>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white font-bold">
+         YT
+        </div>
+        <div>
+         <h4 class="font-semibold text-titicaca-deep">Yuki T.</h4>
+         <p class="text-sm text-titicaca-azure">Japan 🇯🇵</p>
+        </div>
+       </div>
+       <div class="mt-4 pt-4 border-t border-titicaca-mist"><span class="text-xs text-titicaca-azure/60 flex items-center gap-1">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+         </svg> Verified Booking </span>
+       </div>
+      </div>
+     </div><!-- Trust Badges -->
+     <div class="mt-16 flex flex-wrap items-center justify-center gap-8">
+      <div class="bg-white px-6 py-4 rounded-xl shadow-md flex items-center gap-3">
+       <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+        TA
+       </div>
+       <div><span class="block font-semibold text-titicaca-deep">TripAdvisor</span> <span class="text-sm text-titicaca-azure">Certificate of Excellence</span>
+       </div>
+      </div>
+      <div class="bg-white px-6 py-4 rounded-xl shadow-md flex items-center gap-3">
+       <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+        G
+       </div>
+       <div><span class="block font-semibold text-titicaca-deep">Google</span> <span class="text-sm text-titicaca-azure">4.9★ Rating</span>
+       </div>
+      </div>
+      <div class="bg-white px-6 py-4 rounded-xl shadow-md flex items-center gap-3">
+       <div class="w-10 h-10 bg-titicaca-gold rounded-full flex items-center justify-center text-titicaca-deep font-bold text-sm">
+        🛡️
+       </div>
+       <div><span class="block font-semibold text-titicaca-deep">Secure Payments</span> <span class="text-sm text-titicaca-azure">SSL Encrypted</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 bg-titicaca-deep relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+     <div class="absolute top-0 right-0 w-96 h-96 bg-titicaca-gold rounded-full blur-3xl"></div>
+     <div class="absolute bottom-0 left-0 w-96 h-96 bg-titicaca-azure rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid lg:grid-cols-2 gap-12">
+      <div class="text-white"><span class="text-titicaca-gold font-semibold tracking-wider uppercase">Get in Touch</span>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mt-3 mb-6">Ready for Your Adventure?</h2>
+       <p class="text-white/80 text-lg mb-8 leading-relaxed">Have questions? We're here to help! Reach out via WhatsApp for instant responses or fill out the form and we'll get back to you within 24 hours.</p>
+       <div class="space-y-6"><a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-green-500 text-white px-6 py-4 rounded-xl hover:bg-green-600 transition-all w-fit">
+         <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+         </svg><span class="font-semibold">Chat on WhatsApp</span> </a>
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-titicaca-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+         </div>
+         <div>
+          <p class="text-white/60 text-sm">Email us</p>
+          <p class="text-white font-semibold">info@rimuyotours.com</p>
+         </div>
+        </div>
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-titicaca-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+         </div>
+         <div>
+          <p class="text-white/60 text-sm">Visit us</p>
+          <p class="text-white font-semibold">Jr. Lima 458, Puno, Peru</p>
+         </div>
+        </div>
+       </div>
+      </div><!-- Quick Contact Form -->
+      <div class="bg-white rounded-3xl p-8 shadow-2xl">
+       <h3 class="text-2xl font-display font-bold text-titicaca-deep mb-6">Send us a Message</h3>
+       <form id="contact-form" class="space-y-4">
+        <div><label for="contact-name" class="block text-sm font-medium text-titicaca-azure mb-2">Your Name</label> <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist focus:ring-2 focus:ring-titicaca-gold/20 transition-all" placeholder="John Smith" required>
+        </div>
+        <div><label for="contact-email" class="block text-sm font-medium text-titicaca-azure mb-2">Email Address</label> <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist focus:ring-2 focus:ring-titicaca-gold/20 transition-all" placeholder="john@example.com" required>
+        </div>
+        <div><label for="contact-message" class="block text-sm font-medium text-titicaca-azure mb-2">Your Message</label> <textarea id="contact-message" rows="4" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist focus:ring-2 focus:ring-titicaca-gold/20 transition-all resize-none" placeholder="Tell us about your travel plans..." required></textarea>
+        </div><button type="submit" class="w-full bg-titicaca-gold text-titicaca-deep py-4 rounded-xl font-semibold hover:bg-yellow-500 transition-all flex items-center justify-center gap-2"> <span>Send Message</span>
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+         </svg></button>
+       </form>
+       <p id="contact-success" class="hidden mt-4 text-green-600 text-center font-medium">✓ Message sent! We'll respond within 24 hours.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-titicaca-deep border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-titicaca-gold flex items-center justify-center">
+         <svg class="w-5 h-5 text-titicaca-deep" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+         </svg>
+        </div><span class="text-xl font-display font-bold text-white">Rimuyo Tours</span>
+       </div>
+       <p class="text-white/60 text-sm leading-relaxed">Authentic Lake Titicaca experiences since 2016. Your local guides to the world's highest navigable lake.</p>
+      </div>
+      <div>
+       <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+       <ul class="space-y-2">
+        <li><a href="#experiences" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Our Experiences</a></li>
+        <li><a href="#about" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">About Us</a></li>
+        <li><a href="#reviews" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Reviews</a></li>
+        <li><a href="#contact" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Contact</a></li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="text-white font-semibold mb-4">Experiences</h4>
+       <ul class="space-y-2">
+        <li><a href="#" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Uros Floating Islands</a></li>
+        <li><a href="#" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Taquile Island</a></li>
+        <li><a href="#" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Amantaní Homestay</a></li>
+        <li><a href="#" class="text-white/60 hover:text-titicaca-gold transition-colors text-sm">Private Tours</a></li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="text-white font-semibold mb-4">Secure Payments</h4>
+       <div class="flex flex-wrap gap-2">
+        <div class="bg-white/10 px-3 py-2 rounded-lg text-white text-xs font-medium">
+         💳 Visa
+        </div>
+        <div class="bg-white/10 px-3 py-2 rounded-lg text-white text-xs font-medium">
+         💳 Mastercard
+        </div>
+        <div class="bg-white/10 px-3 py-2 rounded-lg text-white text-xs font-medium">
+         🅿️ PayPal
+        </div>
+        <div class="bg-white/10 px-3 py-2 rounded-lg text-white text-xs font-medium">
+         💰 Stripe
+        </div>
+       </div>
+       <p class="text-white/40 text-xs mt-4">🔒 SSL Encrypted • 256-bit Security</p>
+      </div>
+     </div>
+     <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/40 text-sm">© 2024 Rimuyo Tours. All rights reserved.</p>
+      <div class="flex items-center gap-4"><a href="#" class="text-white/40 hover:text-titicaca-gold transition-colors text-sm">Privacy Policy</a> <a href="#" class="text-white/40 hover:text-titicaca-gold transition-colors text-sm">Terms of Service</a>
+       <div class="flex items-center gap-3 ml-4"><a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-titicaca-gold hover:text-titicaca-deep transition-all">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+         </svg></a> <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-titicaca-gold hover:text-titicaca-deep transition-all">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z" />
+         </svg></a> <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-titicaca-gold hover:text-titicaca-deep transition-all">
+         <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer><!-- Booking Modal -->
+   <div id="booking-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeBookingModal()"></div>
+    <div class="absolute inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden max-h-[90%] overflow-y-auto"><!-- Modal Header -->
+     <div class="bg-gradient-to-r from-titicaca-deep to-titicaca-azure p-6 text-white sticky top-0 z-10"><button onclick="closeBookingModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-all">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+       </svg></button>
+      <h3 class="text-2xl font-display font-bold mb-1">Book Your Experience</h3>
+      <p class="text-white/80">Secure your spot with instant confirmation</p>
+     </div><!-- Booking Form -->
+     <form id="booking-form" class="p-6 space-y-6"><!-- Step Indicator -->
+      <div class="flex items-center justify-center gap-2 mb-6">
+       <div id="step1-indicator" class="w-8 h-8 rounded-full bg-titicaca-gold text-titicaca-deep flex items-center justify-center font-bold text-sm">
+        1
+       </div>
+       <div class="w-12 h-1 bg-titicaca-mist rounded-full overflow-hidden">
+        <div id="progress-bar" class="h-full bg-titicaca-gold transition-all" style="width: 0%;"></div>
+       </div>
+       <div id="step2-indicator" class="w-8 h-8 rounded-full bg-titicaca-mist text-titicaca-azure flex items-center justify-center font-bold text-sm">
+        2
+       </div>
+       <div class="w-12 h-1 bg-titicaca-mist rounded-full"></div>
+       <div id="step3-indicator" class="w-8 h-8 rounded-full bg-titicaca-mist text-titicaca-azure flex items-center justify-center font-bold text-sm">
+        3
+       </div>
+      </div><!-- Step 1: Experience Selection -->
+      <div id="step1" class="space-y-4">
+       <div><label for="experience-select" class="block text-sm font-medium text-titicaca-azure mb-2">Select Experience *</label> <select id="experience-select" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist bg-white text-titicaca-deep" required> <option value="">Choose an experience...</option> <option value="Uros Floating Islands|45">Uros Floating Islands - $45/person</option> <option value="Taquile Island Full Day|85">Taquile Island Full Day - $85/person</option> <option value="2-Day Homestay Adventure|150">2-Day Homestay Adventure - $150/person</option> <option value="Private Tour|0">Private Tour - Custom Price</option> </select>
+       </div>
+       <div class="grid grid-cols-2 gap-4">
+        <div><label for="booking-date" class="block text-sm font-medium text-titicaca-azure mb-2">Select Date *</label> <input type="date" id="booking-date" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist" required>
+        </div>
+        <div><label for="guests-count" class="block text-sm font-medium text-titicaca-azure mb-2">Number of Guests *</label> <select id="guests-count" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist bg-white" required> <option value="1">1 Guest</option> <option value="2" selected>2 Guests</option> <option value="3">3 Guests</option> <option value="4">4 Guests</option> <option value="5">5 Guests</option> <option value="6">6+ Guests</option> </select>
+        </div>
+       </div><!-- Price Summary -->
+       <div id="price-summary" class="bg-titicaca-sand rounded-xl p-4 hidden">
+        <div class="flex justify-between items-center mb-2"><span class="text-titicaca-azure">Experience</span> <span id="experience-name" class="font-medium text-titicaca-deep">-</span>
+        </div>
+        <div class="flex justify-between items-center mb-2"><span class="text-titicaca-azure">Guests</span> <span id="guests-display" class="font-medium text-titicaca-deep">2</span>
+        </div>
+        <div class="border-t border-titicaca-deep/10 pt-2 mt-2">
+         <div class="flex justify-between items-center"><span class="text-titicaca-deep font-bold">Total</span> <span id="total-price" class="text-2xl font-display font-bold text-titicaca-gold">$0</span>
+         </div>
+        </div>
+       </div><button type="button" onclick="goToStep(2)" class="w-full bg-titicaca-deep text-white py-4 rounded-xl font-semibold hover:bg-titicaca-azure transition-all"> Continue to Details </button>
+      </div><!-- Step 2: Personal Details -->
+      <div id="step2" class="space-y-4 hidden">
+       <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-2 sm:col-span-1"><label for="booking-name" class="block text-sm font-medium text-titicaca-azure mb-2">Full Name *</label> <input type="text" id="booking-name" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist" placeholder="John Smith" required>
+        </div>
+        <div class="col-span-2 sm:col-span-1"><label for="booking-email" class="block text-sm font-medium text-titicaca-azure mb-2">Email Address *</label> <input type="email" id="booking-email" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist" placeholder="john@example.com" required>
+        </div>
+       </div>
+       <div><label for="booking-phone" class="block text-sm font-medium text-titicaca-azure mb-2">Phone / WhatsApp *</label> <input type="tel" id="booking-phone" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist" placeholder="+1 234 567 8900" required>
+       </div>
+       <div><label for="booking-notes" class="block text-sm font-medium text-titicaca-azure mb-2">Special Requests (Optional)</label> <textarea id="booking-notes" rows="3" class="w-full px-4 py-3 rounded-xl border border-titicaca-mist resize-none" placeholder="Dietary requirements, accessibility needs, etc."></textarea>
+       </div>
+       <div class="flex gap-4"><button type="button" onclick="goToStep(1)" class="flex-1 border-2 border-titicaca-deep text-titicaca-deep py-4 rounded-xl font-semibold hover:bg-titicaca-deep/5 transition-all"> Back </button> <button type="button" onclick="goToStep(3)" class="flex-1 bg-titicaca-deep text-white py-4 rounded-xl font-semibold hover:bg-titicaca-azure transition-all"> Continue to Payment </button>
+       </div>
+      </div><!-- Step 3: Payment -->
+      <div id="step3" class="space-y-4 hidden">
+       <div class="bg-titicaca-sand rounded-xl p-4 mb-4">
+        <h4 class="font-semibold text-titicaca-deep mb-3">Order Summary</h4>
+        <div class="space-y-2 text-sm">
+         <div class="flex justify-between">
+          <span class="text-titicaca-azure">Experience:</span><span id="summary-experience" class="text-titicaca-deep">-</span>
+         </div>
+         <div class="flex justify-between">
+          <span class="text-titicaca-azure">Date:</span><span id="summary-date" class="text-titicaca-deep">-</span>
+         </div>
+         <div class="flex justify-between">
+          <span class="text-titicaca-azure">Guests:</span><span id="summary-guests" class="text-titicaca-deep">-</span>
+         </div>
+         <div class="flex justify-between">
+          <span class="text-titicaca-azure">Name:</span><span id="summary-name" class="text-titicaca-deep">-</span>
+         </div>
+         <div class="border-t border-titicaca-deep/10 pt-2 mt-2">
+          <div class="flex justify-between font-bold">
+           <span class="text-titicaca-deep">Total:</span><span id="summary-total" class="text-titicaca-gold text-lg">$0</span>
+          </div>
+         </div>
+        </div>
+       </div><!-- Payment Methods -->
+       <div><label class="block text-sm font-medium text-titicaca-azure mb-3">Select Payment Method</label>
+        <div class="grid grid-cols-2 gap-3"><label class="relative"> <input type="radio" name="payment-method" value="card" class="peer sr-only" checked>
+          <div class="p-4 border-2 border-titicaca-mist rounded-xl cursor-pointer peer-checked:border-titicaca-gold peer-checked:bg-titicaca-gold/5 transition-all">
+           <div class="text-center"><span class="text-2xl">💳</span>
+            <p class="text-sm font-medium text-titicaca-deep mt-1">Credit Card</p>
+           </div>
+          </div></label> <label class="relative"> <input type="radio" name="payment-method" value="paypal" class="peer sr-only">
+          <div class="p-4 border-2 border-titicaca-mist rounded-xl cursor-pointer peer-checked:border-titicaca-gold peer-checked:bg-titicaca-gold/5 transition-all">
+           <div class="text-center"><span class="text-2xl">🅿️</span>
+            <p class="text-sm font-medium text-titicaca-deep mt-1">PayPal</p>
+           </div>
+          </div></label>
+        </div>
+       </div><!-- Card Details (Sample UI) -->
+       <div id="card-details" class="space-y-3 p-4 bg-titicaca-mist/50 rounded-xl">
+        <p class="text-xs text-titicaca-azure text-center mb-2">🔒 Secure payment powered by Stripe</p>
+        <p class="text-xs text-center text-titicaca-azure bg-yellow-100 p-2 rounded-lg">⚠️ Demo Mode: This is a prototype. No real payment will be processed.</p>
+       </div>
+       <div class="flex gap-4"><button type="button" onclick="goToStep(2)" class="flex-1 border-2 border-titicaca-deep text-titicaca-deep py-4 rounded-xl font-semibold hover:bg-titicaca-deep/5 transition-all"> Back </button> <button type="submit" id="pay-button" class="flex-1 bg-titicaca-gold text-titicaca-deep py-4 rounded-xl font-semibold hover:bg-yellow-500 transition-all flex items-center justify-center gap-2"> <span>Complete Booking</span>
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg></button>
+       </div>
+      </div>
+     </form><!-- Confirmation Screen -->
+     <div id="confirmation-screen" class="p-8 text-center hidden">
+      <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+       <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-display font-bold text-titicaca-deep mb-2">Booking Confirmed! 🎉</h3>
+      <p class="text-titicaca-azure mb-6">Thank you for choosing Rimuyo Tours!</p>
+      <div class="bg-titicaca-sand rounded-xl p-4 text-left mb-6">
+       <p class="text-sm text-titicaca-azure mb-2">Confirmation ID: <span id="confirmation-id" class="font-mono font-bold text-titicaca-deep">-</span></p>
+       <p class="text-sm text-titicaca-azure">Check your email for details and WhatsApp for updates.</p>
+      </div>
+      <div class="flex gap-4"><a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" class="flex-1 bg-green-500 text-white py-3 rounded-xl font-semibold hover:bg-green-600 transition-all flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        </svg> Chat Now </a> <button onclick="closeBookingModal()" class="flex-1 border-2 border-titicaca-deep text-titicaca-deep py-3 rounded-xl font-semibold hover:bg-titicaca-deep/5 transition-all"> Close </button>
+      </div>
+     </div>
+    </div>
+   </div><!-- Toast Notification -->
+   <div id="toast" class="fixed bottom-4 right-4 bg-titicaca-deep text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all z-50 flex items-center gap-3">
+    <div id="toast-icon" class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
+     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+     </svg>
+    </div><span id="toast-message">Notification</span>
+   </div>
+  </div>
+  <script>
+    // Global state
+    let bookings = [];
+    let currentBooking = {
+      experience: '',
+      price: 0,
+      date: '',
+      guests: 2,
+      name: '',
+      email: '',
+      phone: ''
+    };
+
+    const defaultConfig = {
+      hero_title: 'Discover the Magic of Lake Titicaca',
+      hero_subtitle: 'Authentic experiences with local families on the world\'s highest navigable lake. Create memories that last forever.',
+      cta_button: 'Book Your Adventure',
+      background_color: '#0A2647',
+      surface_color: '#E8F1F5',
+      text_color: '#0A2647',
+      primary_action_color: '#C9A227',
+      secondary_action_color: '#1E5F8A',
+      font_family: 'Playfair Display',
+      font_size: 16
+    };
+
+    // Element SDK initialization
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          const heroTitle = document.getElementById('hero-title');
+          const heroSubtitle = document.getElementById('hero-subtitle');
+          const heroCta = document.getElementById('hero-cta');
+          
+          if (heroTitle) {
+            const titleText = config.hero_title || defaultConfig.hero_title;
+            heroTitle.innerHTML = titleText.replace('Lake Titicaca', '<span class="text-titicaca-gold">Lake Titicaca</span>');
+          }
+          if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+          if (heroCta) {
+            const span = heroCta.querySelector('span');
+            if (span) span.textContent = config.cta_button || defaultConfig.cta_button;
+          }
+
+          // Apply font
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          document.querySelectorAll('.font-display').forEach(el => {
+            el.style.fontFamily = `${fontFamily}, serif`;
+          });
+
+          // Apply font size
+          const baseSize = config.font_size || defaultConfig.font_size;
+          document.documentElement.style.fontSize = `${baseSize}px`;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => window.elementSdk.setConfig({ background_color: value })
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => window.elementSdk.setConfig({ surface_color: value })
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => window.elementSdk.setConfig({ text_color: value })
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => window.elementSdk.setConfig({ primary_action_color: value })
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => window.elementSdk.setConfig({ secondary_action_color: value })
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => window.elementSdk.setConfig({ font_family: value })
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => window.elementSdk.setConfig({ font_size: value })
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['cta_button', config.cta_button || defaultConfig.cta_button]
+        ])
+      });
+    }
+
+    // Data SDK initialization
+    const dataHandler = {
+      onDataChanged(data) {
+        bookings = data;
+        console.log('Bookings updated:', bookings.length);
+      }
+    };
+
+    if (window.dataSdk) {
+      window.dataSdk.init(dataHandler);
+    }
+
+    // Navigation scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-titicaca-deep/95', 'backdrop-blur-lg', 'shadow-lg');
+      } else {
+        navbar.classList.remove('bg-titicaca-deep/95', 'backdrop-blur-lg', 'shadow-lg');
+      }
+    });
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Booking modal functions
+    function openBookingModal(preselectedExperience = null) {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      
+      // Reset to step 1
+      goToStep(1);
+      
+      // Preselect experience if provided
+      if (preselectedExperience) {
+        const select = document.getElementById('experience-select');
+        const options = select.options;
+        for (let i = 0; i < options.length; i++) {
+          if (options[i].value.includes(preselectedExperience)) {
+            select.selectedIndex = i;
+            updatePriceSummary();
+            break;
+          }
+        }
+      }
+      
+      // Set minimum date to tomorrow
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.getElementById('booking-date').min = tomorrow.toISOString().split('T')[0];
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      
+      // Reset form
+      document.getElementById('booking-form').reset();
+      document.getElementById('confirmation-screen').classList.add('hidden');
+      document.getElementById('booking-form').classList.remove('hidden');
+      goToStep(1);
+    }
+
+    function selectExperience(name, price) {
+      const select = document.getElementById('experience-select');
+      const options = select.options;
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].value.includes(name)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      openBookingModal();
+      updatePriceSummary();
+    }
+
+    // Step navigation
+    function goToStep(step) {
+      const steps = ['step1', 'step2', 'step3'];
+      const indicators = ['step1-indicator', 'step2-indicator', 'step3-indicator'];
+      
+      // Validate before moving forward
+      if (step === 2 && !validateStep1()) return;
+      if (step === 3 && !validateStep2()) return;
+      
+      steps.forEach((s, i) => {
+        const el = document.getElementById(s);
+        const ind = document.getElementById(indicators[i]);
+        
+        if (i + 1 === step) {
+          el.classList.remove('hidden');
+          ind.classList.remove('bg-titicaca-mist', 'text-titicaca-azure');
+          ind.classList.add('bg-titicaca-gold', 'text-titicaca-deep');
+        } else {
+          el.classList.add('hidden');
+          if (i + 1 < step) {
+            ind.classList.remove('bg-titicaca-mist', 'text-titicaca-azure');
+            ind.classList.add('bg-green-500', 'text-white');
+          } else {
+            ind.classList.remove('bg-titicaca-gold', 'text-titicaca-deep', 'bg-green-500');
+            ind.classList.add('bg-titicaca-mist', 'text-titicaca-azure');
+          }
+        }
+      });
+      
+      // Update progress bar
+      const progress = ((step - 1) / 2) * 100;
+      document.getElementById('progress-bar').style.width = `${progress}%`;
+      
+      // Update summary for step 3
+      if (step === 3) {
+        updateSummary();
+      }
+    }
+
+    function validateStep1() {
+      const experience = document.getElementById('experience-select').value;
+      const date = document.getElementById('booking-date').value;
+      
+      if (!experience || !date) {
+        showToast('Please select an experience and date', 'error');
+        return false;
+      }
+      return true;
+    }
+
+    function validateStep2() {
+      const name = document.getElementById('booking-name').value.trim();
+      const email = document.getElementById('booking-email').value.trim();
+      const phone = document.getElementById('booking-phone').value.trim();
+      
+      if (!name || !email || !phone) {
+        showToast('Please fill in all required fields', 'error');
+        return false;
+      }
+      
+      if (!email.includes('@')) {
+        showToast('Please enter a valid email address', 'error');
+        return false;
+      }
+      return true;
+    }
+
+    // Update price summary
+    function updatePriceSummary() {
+      const select = document.getElementById('experience-select');
+      const guests = parseInt(document.getElementById('guests-count').value);
+      const priceSummary = document.getElementById('price-summary');
+      
+      if (select.value) {
+        const [name, price] = select.value.split('|');
+        currentBooking.experience = name;
+        currentBooking.price = parseInt(price);
+        currentBooking.guests = guests;
+        
+        document.getElementById('experience-name').textContent = name;
+        document.getElementById('guests-display').textContent = guests;
+        
+        const total = parseInt(price) * guests;
+        document.getElementById('total-price').textContent = price === '0' ? 'Quote' : `$${total}`;
+        
+        priceSummary.classList.remove('hidden');
+      } else {
+        priceSummary.classList.add('hidden');
+      }
+    }
+
+    function updateSummary() {
+      const [name, price] = document.getElementById('experience-select').value.split('|');
+      const date = document.getElementById('booking-date').value;
+      const guests = document.getElementById('guests-count').value;
+      const customerName = document.getElementById('booking-name').value;
+      const total = parseInt(price) * parseInt(guests);
+      
+      document.getElementById('summary-experience').textContent = name;
+      document.getElementById('summary-date').textContent = new Date(date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('summary-guests').textContent = `${guests} guest(s)`;
+      document.getElementById('summary-name').textContent = customerName;
+      document.getElementById('summary-total').textContent = price === '0' ? 'To be quoted' : `$${total}`;
+    }
+
+    // Event listeners
+    document.getElementById('experience-select').addEventListener('change', updatePriceSummary);
+    document.getElementById('guests-count').addEventListener('change', updatePriceSummary);
+
+    // Form submission
+    document.getElementById('booking-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const payButton = document.getElementById('pay-button');
+      const originalContent = payButton.innerHTML;
+      payButton.innerHTML = '<div class="loading-spinner mx-auto"></div>';
+      payButton.disabled = true;
+      
+      // Gather booking data
+      const [experienceName, price] = document.getElementById('experience-select').value.split('|');
+      const bookingData = {
+        id: 'RT-' + Date.now().toString(36).toUpperCase(),
+        experience: experienceName,
+        date: document.getElementById('booking-date').value,
+        guests: parseInt(document.getElementById('guests-count').value),
+        name: document.getElementById('booking-name').value,
+        email: document.getElementById('booking-email').value,
+        phone: document.getElementById('booking-phone').value,
+        total: parseInt(price) * parseInt(document.getElementById('guests-count').value),
+        status: 'confirmed',
+        createdAt: new Date().toISOString()
+      };
+      
+      // Save to Data SDK
+      if (window.dataSdk) {
+        if (bookings.length >= 999) {
+          showToast('Booking limit reached. Please contact us directly.', 'error');
+          payButton.innerHTML = originalContent;
+          payButton.disabled = false;
+          return;
+        }
+        
+        const result = await window.dataSdk.create(bookingData);
+        
+        if (result.isOk) {
+          // Show confirmation
+          document.getElementById('confirmation-id').textContent = bookingData.id;
+          document.getElementById('booking-form').classList.add('hidden');
+          document.getElementById('confirmation-screen').classList.remove('hidden');
+          showToast('Booking confirmed! Check your email.', 'success');
+        } else {
+          showToast('Booking failed. Please try again.', 'error');
+        }
+      } else {
+        // Fallback without SDK
+        document.getElementById('confirmation-id').textContent = bookingData.id;
+        document.getElementById('booking-form').classList.add('hidden');
+        document.getElementById('confirmation-screen').classList.remove('hidden');
+        showToast('Booking confirmed! (Demo Mode)', 'success');
+      }
+      
+      payButton.innerHTML = originalContent;
+      payButton.disabled = false;
+    });
+
+    // Contact form
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('contact-success').classList.remove('hidden');
+      e.target.reset();
+      showToast('Message sent successfully!', 'success');
+    });
+
+    // Toast notification
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      const toastIcon = document.getElementById('toast-icon');
+      
+      toastMessage.textContent = message;
+      
+      if (type === 'error') {
+        toastIcon.classList.remove('bg-green-500');
+        toastIcon.classList.add('bg-red-500');
+        toastIcon.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
+      } else {
+        toastIcon.classList.remove('bg-red-500');
+        toastIcon.classList.add('bg-green-500');
+        toastIcon.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
+      }
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d63dbdc12589542',t:'MTc3MjQ5MDc2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
